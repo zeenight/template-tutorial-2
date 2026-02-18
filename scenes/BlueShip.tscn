@@ -1,14 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://datfp8kxjrjg"]
+[gd_scene format=3 uid="uid://datfp8kxjrjg"]
 
 [ext_resource type="Texture2D" uid="uid://dgrrg14sgp4f4" path="res://assets/playerShip1_blue.png" id="1"]
+[ext_resource type="Script" uid="uid://bsuv2svmaqypq" path="res://scenes/PlatformBlue.gd" id="2_yp2ru"]
+[ext_resource type="PackedScene" uid="uid://y5a4e3ajuy2r" path="res://scenes/StonePlatform.tscn" id="3_6kici"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(100.011, 77.4256)
 
-[node name="BlueShip" type="RigidBody2D"]
+[node name="BlueShip" type="RigidBody2D" unique_id=1638146297]
+position = Vector2(64, 101)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2100664303]
 texture = ExtResource("1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1046230435]
 shape = SubResource("1")
+
+[node name="PlatformBlue" type="Node2D" parent="." unique_id=1506247194]
+position = Vector2(35, 565)
+script = ExtResource("2_yp2ru")
+
+[node name="StonePlatform" parent="PlatformBlue" unique_id=549404772 instance=ExtResource("3_6kici")]
+position = Vector2(-19, -156)
+
+[node name="StonePlatform2" parent="PlatformBlue" unique_id=361836443 instance=ExtResource("3_6kici")]
+position = Vector2(57, -156)
